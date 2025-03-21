@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="bn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>English Janala by @Touhid</title>
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;600;700&family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <script
+      src="https://kit.fontawesome.com/873c85c170.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Tailwind CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind Configuration -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              pc: "#422AD5",
+            },
+            fontFamily: {
+              pop: ["Poppins", "sans-serif"],
+              sil: ["Hind Siliguri", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </head>
+
+  <body class="font-pop scroll-smooth">
+    <!-- Header -->
+    <header
+      id="header"
+      class="hidden fixed top-0 left-0 w-full z-50 backdrop-blur-lg shadow-md"
+    >
+      <nav
+        class="mx-auto flex justify-between py-3 px-2 md:px-14 lg:px-14 bg-transparent"
+      >
+        <div class="justify-center items-center gap-1 hidden md:flex lg:flex">
+          <h1 class="text-2xl font-semibold">English</h1>
+          <img class="max-w-40" src="./assets/logo.svg" alt="logo" />
+          <h1 class="text-2xl font-semibold">জানালা</h1>
+        </div>
+
+        <ul class="flex justify-between gap-4">
+          <li>
+            <a id="faq-btn" href="#FAQ">
+              <button
+                class="bg-transparent hover:bg-[#422AD5] hover:text-white text-[#422AD5] border-[#422AD5] border-2 font-semibold rounded-md flex items-center justify-center py-2 px-3 gap-2"
+              >
+                <i class="fa-solid fa-circle-question"></i>
+                <p>FAQ</p>
+              </button>
+            </a>
+          </li>
+          <li>
+            <a id="lessons-btn" href="#Lessons">
+              <button
+                class="bg-transparent text-[#422AD5] hover:bg-[#422AD5] hover:text-white border-[#422AD5] border-2 font-semibold rounded-md flex items-center justify-center py-2 px-3 gap-2"
+              >
+                <i class="fa-solid fa-book-open"></i>
+                <p>Learn</p>
+              </button>
+            </a>
+          </li>
+          <li>
+            <a id="logout-btn" href="">
+              <button
+                class="bg-transparent text-[#422AD5] hover:bg-[#422AD5] hover:text-white border-[#422AD5] border-2 font-semibold rounded-md flex items-center justify-center py-2 px-3 gap-2"
+              >
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <p>Logout</p>
+              </button>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <div
+      id="hero"
+      class="flex justify-between items-center mt-11 mx-4 md:mx-20 lg:mx-24"
+    >
+      <div class="gap-2">
+        <h1 class="text-xl lg:text-[48px] font-bold">
+          <span class="text-[#00BCFF]">English</span> is Easy!!
+        </h1>
+        <p
+          class="hidden md:block lg:block font-sil text-lg lg:text-2xl font-semibold my-5"
+        >
+          আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। আপনি যদি নতুন হন অথবা
+          <br />
+          আপনার দক্ষতা বাড়াতে চান, আমাদের Interactive Lessons আপনাকে নিয়ে যাবে
+          অন্য একটি Level এ
+        </p>
+        <p
+          class="md:hidden lg:hidden text-justify font-sil text-lg lg:text-2xl font-semibold my-3"
+        >
+          আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। আপনি যদি নতুন হন অথবা
+          আপনার দক্ষতা বাড়াতে চান, আমাদের Interactive Lessons আপনাকে নিয়ে যাবে
+          অন্য একটি Level এ
+        </p>
+        <form action="">
+          <input
+            id="hero-name"
+            type="text"
+            placeholder="Enter Your Name"
+            class="input input-neutral my-2 border-2 px-2 rounded-md"
+          />
+          <br />
+          <input
+            id="hero-password"
+            type="password"
+            placeholder="Enter Login Code(123456)"
+            class="input input-neutral my-2 border-2 px-2 rounded-md"
+          />
+          <br />
+          <button
+            id="btn-submit"
+            class="bg-[#422AD5] border-2 font-semibold rounded-md py-2 px-3 gap-2 text-white mt-2 border-none"
+          >
+            <p>Get Started</p>
+          </button>
+        </form>
+      </div>
+      <div class="hidden md:block lg:block">
+        <img src="./assets/hero.svg" alt="" />
+      </div>
+    </div>
+
+    <div id="details" class="mt-7 md:mt-[80px] lg:mt-[80px] hidden">
+      <!-- Leasson  -->
+      <section id="Lessons" class="">
+        <br />
+        <br />
+        <h1 class="font-bold text-[35px] text-center">
+          <span class="text-[#00BCFF]">Let's</span> Learn Vocabularies
+        </h1>
+        <div
+          id="Lessons-container"
+          class="my-7 flex flex-wrap justify-center gap-3"
+        >
+          <!-- Lessons container -->
+        </div>
+        <section id="loader" class="text-center py-7 hidden">
+          <span class="loading loading-dots loading-xl"></span>
+        </section>
+
+        <!-- Show ALL words in cards here -->
+        <div
+          id="words-container"
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 bg-[#F8F8F8] mx-1 md:mx-7 lg:mx-10 my-4 rounded-lg p-2 md:p-4 lg:p-4"
+        >
+          <!-- Word cards -->
+          <div class="font-sil flex items-center justify-center col-span-full">
+            <div class="">
+              <p class="text-center my-3">আপনি এখনো কোন Lesson Select করেননি</p>
+              <h1 class="text-center font-bold text-3xl mt-2 mb-6">
+                একটি Lesson Select করুন।
+              </h1>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Faq asked Questions -->
+      <section id="FAQ" class="mt-10 md:mt-[300px] lg:mt-[300px] lg:pb-24">
+        <h1 class="font-bold text-[35px] text-center">
+          <span class="text-[#00BCFF]">Frequently</span> Asked Questions
+        </h1>
+        <div class="mt-14">
+          <div class="mx-3 md:mx-7 lg:mx-12 space-y-4">
+            <div class="border rounded-lg shadow-sm overflow-hidden">
+              <button
+                class="w-full p-4 flex justify-between items-center text-gray-800 font-semibold"
+                onclick="toggleAccordion(1)"
+              >
+                <span
+                  >1. What is the difference between var, let, and const?</span
+                >
+                <span id="icon-1" class="text-xl">+</span>
+              </button>
+              <div id="content-1" class="hidden p-4 bg-gray-50 text-gray-700">
+                <p>
+                  <span class="font-bold">var:</span> Function-scoped, can be
+                  redeclared and updated.
+                </p>
+                <p>
+                  <span class="font-bold">let:</span> Block-scoped, can be
+                  updated but not redeclared.
+                </p>
+                <p>
+                  <span class="font-bold">const:</span> Block-scoped, cannot be
+                  updated or redeclared.
+                </p>
+              </div>
+            </div>
+
+            <div class="border rounded-lg shadow-sm overflow-hidden">
+              <button
+                class="w-full p-4 flex justify-between items-center text-gray-800 font-semibold"
+                onclick="toggleAccordion(2)"
+              >
+                <span
+                  >2. What is the difference between map(), forEach(), and
+                  filter()?</span
+                >
+                <span id="icon-2" class="text-xl">+</span>
+              </button>
+              <div id="content-2" class="hidden p-4 bg-gray-50 text-gray-700">
+                <p>
+                  <code class="font-bold">map()</code>: Returns a new array
+                  after applying a function to each element.
+                </p>
+                <p>
+                  <code class="font-bold">forEach()</code>: Executes a function
+                  for each element but does not return anything.
+                </p>
+                <p>
+                  <code class="font-bold">filter()</code>: Returns a new array
+                  with elements that pass a condition.
+                </p>
+              </div>
+            </div>
+
+            <div class="border rounded-lg shadow-sm overflow-hidden">
+              <button
+                class="w-full p-4 flex justify-between items-center text-gray-800 font-semibold"
+                onclick="toggleAccordion(3)"
+              >
+                <span
+                  >3. Explain arrow functions and how they are different from
+                  regular functions</span
+                >
+                <span id="icon-3" class="text-xl">+</span>
+              </button>
+              <div id="content-3" class="hidden p-4 bg-gray-50 text-gray-700">
+                <p>
+                  Arrow functions have a shorter syntax and do not have their
+                  own <code>this</code>.
+                </p>
+                <p class="font-bold">Example:</p>
+                <p><code>const add = (a, b) => a + b;</code></p>
+              </div>
+            </div>
+
+            <div class="border rounded-lg shadow-sm overflow-hidden">
+              <button
+                class="w-full p-4 flex justify-between items-center text-gray-800 font-semibold"
+                onclick="toggleAccordion(4)"
+              >
+                <span>4. How do JavaScript Promises work?</span>
+                <span id="icon-4" class="text-xl">+</span>
+              </button>
+              <div id="content-4" class="hidden p-4 bg-gray-50 text-gray-700">
+                <p>
+                  A Promise represents an asynchronous operation that may
+                  resolve or reject in the future.
+                </p>
+                <p>
+                  It has three states: <code class="font-bold">pending</code>,
+                  <code class="font-bold">fulfilled</code>, and
+                  <code class="font-bold">rejected</code>.
+                </p>
+              </div>
+            </div>
+
+            <div class="border rounded-lg shadow-sm overflow-hidden">
+              <button
+                class="w-full p-4 flex justify-between items-center text-gray-800 font-semibold"
+                onclick="toggleAccordion(5)"
+              >
+                <span>5. How do closures work in JavaScript?</span>
+                <span id="icon-5" class="text-xl">+</span>
+              </button>
+              <div id="content-5" class="hidden p-4 bg-gray-50 text-gray-700">
+                <p>
+                  Closures allow a function to access variables from its outer
+                  scope, even after the outer function has finished executing.
+                </p>
+                <p>
+                  This helps preserve state in asynchronous programming or
+                  callbacks.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <!-- Footer -->
+    <footer id="foot" class="border-t-2 border-orange-300 pt-10 mt-16">
+      <div
+        class="font-sil mx-3 md:mx-10 lg:mx-14 flex flex-col md:flex-row lg:flex-row justify-between items-start lg:items-center md:items-center"
+      >
+        <div class="mb-4">
+          <div class="flex gap-1 items-center">
+            <h1 class="text-2xl font-semibold">English</h1>
+            <img class="max-w-40" src="./assets/logo.svg" alt="logo" />
+            <h1 class="text-2xl font-semibold">জানালা</h1>
+          </div>
+          <p class="font-bold my-2">ইংরেজি শিখুন সহজে</p>
+          <p>Providing ED-Tech Applications since 2025</p>
+        </div>
+
+        <div class="md:mb-[120px] lg:mb-[150px]">
+          <p class="text-gray-500 my-3">Follow us</p>
+          <div
+            class="flex justify-between gap-2 items-start md:items-center lg:items-center text-2xl"
+          >
+            <a href="https://www.facebook.com/riyadhwhy" target="_blank"
+              ><i class="fab fa-facebook hover:text-blue-500"></i
+            ></a>
+            <a href="https://github.com/touhid404" target="_blank"
+              ><i class="fab fa-github hover:text-gray-500"></i
+            ></a>
+            <a href="https://www.youtube.com/@riyadhtouhid" target="_blank"
+              ><i class="fab fa-youtube hover:text-red-600"></i
+            ></a>
+            <a href="https://www.instagram.com/riyadh_touhid" target="_blank"
+              ><i class="fab fa-linkedin hover:text-blue-600"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Open the modal using ID.showModal() method -->
+
+    <dialog id="wordsDetails" class="modal modal-bottom sm:modal-middle">
+      <div class="modal-box">
+        <div class="p-4" id="modal-container"></div>
+        <div class="modal-action">
+          <form method="dialog">
+            <!-- if there is a button in form, it will close the modal -->
+            <button class="btn bg-blue-800 p-2 text-white">
+              Complete learning
+            </button>
+          </form>
+        </div>
+      </div>
+    </dialog>
+    <script src="./scripts/main.js"></script>
+  </body>
+</html>
